@@ -14,13 +14,13 @@ class ReviewsController < ApplicationController
 
     if @review.save
       redirect_to movie_reviews_path(@movie),
-                  notice: "Thanks for your review!"
+                    notice: "Thanks for your review!"
     else
       render :new
     end
   end
 
-  private
+private
 
   def review_params
     params.require(:review).permit(:name, :comment, :stars)
@@ -29,4 +29,5 @@ class ReviewsController < ApplicationController
   def set_movie
     @movie = Movie.find(params[:movie_id])
   end
+
 end

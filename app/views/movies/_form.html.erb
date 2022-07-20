@@ -1,5 +1,5 @@
 <%= form_with(model: movie, local: true) do |f| %>
-  <%= render 'shared/errors', object: movie %>
+  <%= render "shared/errors", object: movie %>
 
   <%= f.label :title %>
   <%= f.text_field :title, autofocus: true %>
@@ -11,7 +11,7 @@
   <%= f.select :rating, Movie::RATINGS, prompt: "Pick one" %>
 
   <%= f.label :released_on %>
-  <%= f.date_field :released_on %>
+  <%= f.date_select :released_on, {}, {class: "date"} %>
 
   <%= f.label :total_gross %>
   <%= f.number_field :total_gross %>
